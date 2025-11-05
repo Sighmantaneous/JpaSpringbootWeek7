@@ -18,8 +18,12 @@ public class PersonController {
     public Person create(@Valid @RequestBody Person person) {
         return service.create(person);
     }
-    /*
     @GetMapping
-    public List<Person> all() { return service.findAll(); }
-*/
+    public List<Person> all() {
+        return service.findAll(); }
+
+    @GetMapping("/{id}")
+    public Person byEmployeeId(@PathVariable String id) {
+        return service.findByEmployeeId(id);
+    }
 }
